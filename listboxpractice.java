@@ -1,6 +1,7 @@
 package testngpractice;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -70,6 +71,196 @@ public class listboxpractice {
 //		Thread.sleep(3000);
 //		
 //		d.close();
+		
+		
+		//3. multiselect code
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+//		
+//		d.findElement(By.linkText("Multi Select")).click();
+//		
+//		 WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+//		
+//		Select s1 = new Select(product);
+//		s1.selectByVisibleText("Fjallraven - Foldsac...");
+//		s1.selectByIndex(1);
+//		s1.selectByVisibleText("Mens Cotton Jacket...");
+//		
+//		Thread.sleep(5000);
+//		d.findElement(By.xpath("//button[.='Add']")).click();
+//		Thread.sleep(4000);
+//		
+//		d.close();
+//		
+		
+//		4.deselect method code
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+//		
+//		d.findElement(By.linkText("Multi Select")).click();
+//		
+//		 WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+//		 
+//		 Select s = new Select(product);
+//		 
+//		 s.selectByIndex(1);
+//		 s.selectByVisibleText("Fjallraven - Foldsac...");
+//		 s.selectByValue("Mens Cotton Jacket");
+//		 Thread.sleep(3000);
+//		 
+//		 s.deselectByIndex(1);
+//		 s.deselectByVisibleText("Fjallraven - Foldsac...");
+//		 s.deselectByValue("Mens Cotton Jacket");
+//		 
+//		 Thread.sleep(3000);
+//		 d.close();
+//		 
+		
+		
+//		5.deselectall method code
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+//		
+//		d.findElement(By.linkText("Multi Select")).click();
+//		
+//		 WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+//		 
+//		 Select s = new Select(product);
+//		 
+//		 s.selectByIndex(0);
+//		 s.selectByIndex(1);
+//		 s.selectByIndex(2);
+//		 
+//		 Thread.sleep(4000);
+//		 
+//		 s.deselectAll();
+//		 Thread.sleep(3000);
+//		 d.close();
+		
+		
+		
+//		6. getfirstselectoption method code
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		
+//		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+//		d.findElement(By.linkText("Multi Select")).click();
+//		
+//		WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+//		
+//		Select s = new Select(product);
+//		
+//		s.selectByIndex(0);
+//		s.selectByIndex(1);
+//		s.selectByIndex(2);
+//		s.selectByIndex(3);
+//		
+//		Thread.sleep(3000);
+//		
+//		String option = s.getFirstSelectedOption().getText();
+//		System.out.println(option);
+//		Thread.sleep(3000);
+//		
+//		d.close();
+		
+				
+//		7.getallselectedoptions() method code
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+//		d.findElement(By.linkText("Multi Select")).click();
+//		
+//		WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+//		 
+//		Select s = new Select(product);
+//		
+//		s.selectByIndex(0);
+//		s.selectByIndex(1);
+//		s.selectByIndex(2);
+//		s.selectByIndex(3);
+//		
+//		Thread.sleep(3000);
+//		
+//		List<WebElement> options = s.getAllSelectedOptions();
+//		int count = options.size();
+//		System.out.println(count);
+//		
+//		for (int i = 0; i < count; i++) {
+//			String options1 = options.get(i).getText();
+//			System.out.println(options1);
+//			
+//			Thread.sleep(3000);
+//			
+//		}
+//		
+//		d.close();
+		
+		
+//		8.getoptions() method code
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		
+//		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+//		d.findElement(By.linkText("Multi Select")).click();
+//		
+//		WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+//		
+//		Select s = new Select(product);
+//		
+//		List<WebElement> options = s.getOptions();
+//		
+//		int count = options.size();
+//		System.out.println(count);
+//		
+//		for (int i = 0; i < count; i++) {
+//			String poptions= options.get(i).getText();
+//			Thread.sleep(2000);
+//			System.out.println(poptions);
+//			
+//		}
+//		d.close();
+		
+		
+		WebDriver d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+		
+		d.findElement(By.linkText("Multi Select")).click();
+		
+		WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+		
+		Select s = new Select(product);
+		
+		String options = s.getWrappedElement().getText();
+		
+		System.out.println(options);
+		Thread.sleep(3000);
+		
+		d.close();
 		
 	}
 }
