@@ -74,28 +74,45 @@ public class webelementmethods {
 //		d.close();
 		
 		
-		WebDriver d = new ChromeDriver();
+//		6. getrect method code
+//		WebDriver d = new ChromeDriver();
+//		
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		d.findElement(By.xpath("(//section[@class='poppins text-[14px]'])[6]")).click();
+//		
+//		int height = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getHeight();
+//		System.out.println("Height of image is: "+height);
+//		
+//		int width = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getWidth();
+//		System.out.println("Width of image is: "+width);
+//		
+//		int x = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getX();
+//		System.out.println("X axis of image is: "+x);
+//		
+//		int y = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getY();
+//		System.out.println("Y axis of image is: "+y);
+//		
+//		d.close();
 		
+		
+		WebDriver d = new ChromeDriver();
 		d.manage().window().maximize();
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-		d.get("https://demoapps.qspiders.com/ui?scenario=1");
-		d.findElement(By.xpath("(//section[@class='poppins text-[14px]'])[6]")).click();
+		d.get("https://www.facebook.com/");
 		
-		int height = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getHeight();
-		System.out.println("Height of image is: "+height);
+		boolean logo = d.findElement(By.xpath("//img[@alt='Facebook']")).isDisplayed();
 		
-		int width = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getWidth();
-		System.out.println("Width of image is: "+width);
-		
-		int x = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getX();
-		System.out.println("X axis of image is: "+x);
-		
-		int y = d.findElement(By.xpath("//img[@title='Image tooltip']")).getRect().getY();
-		System.out.println("Y axis of image is: "+y);
+		if(logo == true) {
+			System.out.println("Logo is displayed.");
+		}else {
+			System.out.println("Logo is not displayed");
+		}
 		
 		d.close();
 		
-	
 	}
 }
