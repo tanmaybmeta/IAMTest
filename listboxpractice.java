@@ -241,26 +241,28 @@ public class listboxpractice {
 //		}
 //		d.close();
 		
+//		9.getwrappedelement() method code
+//		
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		d.findElement(By.xpath("//section[.='Dropdown']")).click();
+//		
+//		d.findElement(By.linkText("Multi Select")).click();
+//		
+//		WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
+//		
+//		Select s = new Select(product);
+//		
+//		String options = s.getWrappedElement().getText();
+//		System.out.println(options);
+//		Thread.sleep(3000);
+//		
+//		d.close();
 		
-		WebDriver d = new ChromeDriver();
-		d.manage().window().maximize();
-		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-		d.get("https://demoapps.qspiders.com/ui?scenario=1");
-		d.findElement(By.xpath("//section[.='Dropdown']")).click();
-		
-		d.findElement(By.linkText("Multi Select")).click();
-		
-		WebElement product = d.findElement(By.xpath("//select[@id='select-multiple-native']"));
-		
-		Select s = new Select(product);
-		
-		String options = s.getWrappedElement().getText();
-		
-		System.out.println(options);
-		Thread.sleep(3000);
-		
-		d.close();
 		
 	}
 }
