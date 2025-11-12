@@ -21,18 +21,29 @@ public class waitpractice {
 		d.findElement(By.name("email")).sendKeys("admin@gmail.com");
 		d.findElement(By.id("formPassword")).sendKeys("admin");
 		
-		WebDriverWait wait = new WebDriverWait(d, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(d, Duration.ofSeconds(10));
 		@Nullable
 		WebElement signin = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
 		
 		signin.click();
 		
-		System.out.println("Login is successful");
 		
-		Thread.sleep(5000);
+		@Nullable
+		WebElement toast = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[.='Login successful.'])[5]")));
 		
-		d.findElement(By.xpath("//img[@alt='Header Avatar']")).click();
-		d.findElement(By.xpath("//span[.='Logout']")).click();
+		System.out.println("Toast message is: "+toast.getText());
+		
+		wait.until(ExpectedConditions.invisibilityOf(toast));
+		
+		
+		@Nullable
+		WebElement profileicon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='Header Avatar']")));
+		profileicon.click();
+		
+		
+		WebElement logout = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[.='Logout']")));
+		logout.click();
+		
 		System.out.println("Logout is successful.");
 		
 		Thread.sleep(3000);
