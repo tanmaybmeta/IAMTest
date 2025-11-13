@@ -1,6 +1,7 @@
 package testngpractice;
 
 import java.awt.AWTException;
+import java.awt.Desktop.Action;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -12,12 +13,15 @@ import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
+import groovyjarjarantlr4.v4.parse.ANTLRParser.action_return;
 
 public class popuppractice {
 	public static void main(String[] args) throws InterruptedException, IOException, AWTException {
@@ -225,30 +229,102 @@ public class popuppractice {
 //		
 		
 		
-		WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        // Open main demo site
-        driver.get("https://demoapps.qspiders.com/ui?scenario=1");
-
-        // Navigate step by step to Double Click page
-        driver.findElement(By.xpath("//section[.='Button']")).click();
-        driver.findElement(By.xpath("//section[.='Double Click']")).click();
-
-        // Locate the double-click button
-        WebElement doubleClickBtn = driver.findElement(By.id("btn20"));
-
-        // Perform double-click
-        Actions act = new Actions(driver);
-        act.doubleClick(doubleClickBtn).perform();
-
-        // Optional: get message or effect after double click
-        WebElement msg = driver.findElement(By.id("doubleClickMessage"));
-        System.out.println("Message: " + msg.getText());
-
-        Thread.sleep(2000);
-        driver.close();
+	//	8. double click method code
+//		WebDriver driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//
+//        // Open main demo site
+//        driver.get("https://demoapps.qspiders.com/ui?scenario=1");
+//
+//        // Navigate step by step to Double Click page
+//        driver.findElement(By.xpath("//section[.='Button']")).click();
+//        driver.findElement(By.xpath("//section[.='Double Click']")).click();
+//
+//        // Locate the double-click button
+//        WebElement doubleClickBtn = driver.findElement(By.id("btn20"));
+//
+//        // Perform double-click
+//        Actions act = new Actions(driver);
+//        act.doubleClick(doubleClickBtn).perform();
+//
+//        // Optional: get message or effect after double click
+//        WebElement msg = driver.findElement(By.id("doubleClickMessage"));
+//        System.out.println("Message: " + msg.getText());
+//
+//        Thread.sleep(2000);
+//        driver.close();
+		
+		
+	//	10.scroll  code
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://www.bbc.com/");
+//		
+//		JavascriptExecutor js = (JavascriptExecutor) d;
+//		Thread.sleep(3000);
+//		
+//		int yaxis = d.findElement(By.xpath("//div[@class='sc-75fadac9-5 jkHfbE']")).getLocation().getY();
+//		System.out.println(yaxis);
+//		
+//		js.executeScript("window.scrollBy(0, " + yaxis + ")");
+//		Thread.sleep(3000); 
+//		d.close();
+		
+		
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://www.amazon.in/");
+//		
+//		JavascriptExecutor js = (JavascriptExecutor) d;
+//		
+//		Thread.sleep(3000);
+//		
+//		js.executeScript("window.scrollBy(0, 3000)");
+//		
+//		Thread.sleep(3000);
+		
+		
+//		11. drag and drop method code
+//		
+//		WebDriver d = new ChromeDriver();
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		
+//		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+//		
+//		d.findElement(By.xpath("//section[.='Mouse Actions']")).click();
+//		d.findElement(By.xpath("//section[.='Drag & Drop']")).click();
+//		
+//		d.findElement(By.linkText("Drag Position")).click();
+//		
+//		WebElement src = d.findElement(By.xpath("//div[.='Mobile Charger']"));
+//		
+//		WebElement dest = d.findElement(By.xpath("//div[@class='drop-column  min-h-[200px] bg-slate-100']"));
+//		
+//		Actions a = new Actions(d);
+//		a.dragAndDrop(src, dest).perform();
+//		
+//		Thread.sleep(3000);
+//		d.close();
+		
+		
+		WebDriver d = new ChromeDriver();
+		d.manage().window().maximize();
+		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		d.get("https://demoapps.qspiders.com/ui?scenario=1");
+		
+		d.findElement(By.xpath("//section[.='Mouse Actions']")).click();
+		d.findElement(By.xpath("//section[.='Drag & Drop']")).click();
+		
+		d.findElement(By.linkText("Drag Position")).click();		
+		
+		
 		
 	}
 }
